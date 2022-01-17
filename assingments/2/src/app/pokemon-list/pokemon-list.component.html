@@ -1,0 +1,26 @@
+<div class="app">
+
+  <div class="pokemonCard" *ngIf="isPokeChosen; else noneChosen">
+    <img class="pic" [src]="chosenPoke.sprites.front_default"/>
+
+    <b><p>{{chosenPoke.species.name}}</p></b>
+    <p>ID: {{chosenPoke.id}}</p>
+    <p>Weight: {{chosenPoke.weight}}</p>
+    <p>Height: {{chosenPoke.height}}</p>
+    <p>Types: <span *ngFor = "let type of chosenPoke.types">{{type.type.name}}, </span></p>
+  </div>
+  <ng-template #noneChosen>
+    <div class="pokemonCard selected" *ngFor="let poke of pokeList" (click)="selectedPoke(poke)">
+      <img class="pic" [src]="poke.sprites.front_default"/>
+
+      <b><p>{{poke.species.name}}</p></b>
+      <p>ID: {{poke.id}}</p>
+      <p>Weight: {{poke.weight}}</p>
+      <p>Height: {{poke.height}}</p>
+      <p>Types: <span *ngFor = "let type of poke.types">{{type.type.name}}, </span></p>
+    </div>
+  </ng-template>
+
+</div>
+
+<button id="back" (click)="back()">Back</button>

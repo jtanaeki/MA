@@ -1,0 +1,45 @@
+.app {
+  display: flex;
+  justify-content: space-around;
+}
+
+.pokemonCard {
+  text-align: center;
+  background-color: black;
+  border: 5px solid red;
+  width: 300px;
+  height: 475px;
+}
+
+p {
+  color: white;
+}
+
+.pic {
+  width: 250px;
+  height: 250px;
+}
+
+.selected {
+  cursor: pointer;
+}
+
+#back {
+  margin-top: 50px;
+  position: relative;
+  left: 50%
+}
+
+@media only screen and (max-width: 600px) {
+  .app {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 65%;
+
+  }
+
+  .pokemonCard {
+    margin-top: 50px;
+  }
+}
